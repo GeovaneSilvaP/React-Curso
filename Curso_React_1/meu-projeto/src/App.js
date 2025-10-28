@@ -1,24 +1,24 @@
-import logo from './logo.svg';
-import './App.css';
+import logo from "./logo.svg";
+import "./App.css";
 import { HelloWord } from "./components/HelloWord";
+import { SyMyName } from "./components/SyMyName";
+import { Pessoa } from "./components/Pessoa";
 
 function App() {
-  const nome = "Geovane";
-  const novoNome = nome.toUpperCase();
-
-  function soma(a, b) {
-    return a + b;
-  }
-  const url = "https://placehold.co/150x150"
+  const nome = "Aurora";
 
   return (
     <div className="App">
-      <h1>Olá React</h1>
-      <h2>Alterando JSX</h2>
-      <p>Olá, {novoNome}</p>
-      <p>soma: {soma(5, 5)}</p>
-      <img src={url} alt= "Minha Imagem"/>
-      <HelloWord/>
+      <HelloWord />
+      <SyMyName nome="Geovane" />
+      <SyMyName nome="Iury" />
+      <SyMyName nome={nome} />
+      <Pessoa
+        nome="Geovane"
+        idade="23"
+        profissao="Programador"
+        foto="https://placehold.co/150x150"
+      />
     </div>
   );
 }
