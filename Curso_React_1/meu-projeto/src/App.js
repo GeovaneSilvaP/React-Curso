@@ -5,6 +5,9 @@ import { Pessoa } from "./components/Pessoa";
 import { Frase } from "./components/Frase";
 import { SuaCidade } from "./components/Teste";
 import { SyMayName } from "./components/SyMayName";
+import { List } from "./components/List";
+import { Evento } from "./components/Evento";
+import { Form } from "./components/Form";
 
 function App() {
   const nome = "Aurora";
@@ -28,6 +31,10 @@ function App() {
       numero="188"
       estado="Maranhão"
       rua="Clodomir Serejo"/>
+      <List />
+      <Evento numero="1"/>
+      <Evento numero="2"/>
+      <Form/>
     </div>
   );
 }
