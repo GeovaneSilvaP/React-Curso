@@ -7,7 +7,7 @@ import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 
 function AppRoutes() {
     return(
-         <Router>
+        <Router>
       <ul className={styles.list}>
         <li className={styles.item}><Link to="/">Home</Link></li>
         <li className={styles.item}><Link to="/empresa">Empresa</Link></li>
