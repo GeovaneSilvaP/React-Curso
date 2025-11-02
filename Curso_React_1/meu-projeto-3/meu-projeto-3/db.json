@@ -1,17 +1,5 @@
 {
-  "projects": [
-    {
-      "id": "f100",
-      "name": "Projeto",
-      "budget": "5000",
-      "category": {
-        "id": "3",
-        "name": "Disign"
-      },
-      "cost": 0,
-      "services": []
-    }
-  ],
+  "projects": [],
   "categories": [
     {
       "id": "1",
