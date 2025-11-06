@@ -1,0 +1,107 @@
+@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600&family=Pacifico&display=swap");
+
+body,
+html {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  max-height: 100vh;
+  background: linear-gradient(135deg, #ffc0cb, #ffb6c1, #fff0f5);
+  font-family: "Quicksand", sans-serif;
+  color: #ff1493;
+  text-align: center;
+  overflow: hidden;
+}
+
+.container {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#parte1,
+.card {
+  background: #fff;
+  border-radius: 25px;
+  padding: 40px 30px;
+  box-shadow: 0 0 20px rgba(255, 105, 180, 0.3);
+  max-width: 400px;
+  animation: fadeIn 1s ease-in-out;
+}
+
+.card {
+  position: relative;
+  background: white;
+  border-radius: 20px;
+  padding: 30px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  width: 300px;
+  height: 350px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+
+h1{
+    font-family: 'Pacifico', cursive;
+    font-size: 1.8rem;
+    color: #ff1493;
+    text-shadow: 2px 2px 4px rgba(255, 105, 180, 0.3);
+}
+
+img {
+  width: 80%;
+  max-width: 220px;
+  border-radius: 20px;
+  margin: 15px 0;
+  box-shadow: 0 0 15px rgba(255, 105, 180, 0.4);
+  transition: transform 0.3s ease;
+}
+
+img:hover{
+    transform: scale(1.05);
+}
+
+button{
+    background: linear-gradient(135deg, #ff69b4, #ff85c1);
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 30px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 600;
+    box-shadow:  0 4px 10px rgba(255, 105, 180, 0.3);
+    transition: all 0.3s ease;
+}
+
+button:hover{
+    background: linear-gradient(135deg, #ff85c1, #ffb6c1);
+    transform: scale(1.1);
+}
+
+.botoes {
+  position: relative; /* 🔥 ESSENCIAL para o botão "Não" se mover dentro dessa área */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  margin-top: 30px;
+  height: 80px; /* define a área de movimentação */
+}
+
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(15px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.mensagem {
+  margin-top: 20px;
+  color: #ff69b4;
+  font-size: 1.1rem;
+}
