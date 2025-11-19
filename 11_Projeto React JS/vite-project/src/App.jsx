@@ -11,6 +11,7 @@ import {
   Zap,
   Sparkles,
   Menu,
+  Clock,
 } from "lucide-react";
 
 const navLinks = [
@@ -88,7 +89,7 @@ function App() {
       </header>
       {/* Hero */}
       <section className="relative overflow-hidden">
-        <div className="mx-auto max-w-6xl px-4 py-20 relative">
+        <div className="mx-auto max-w-6xl px-4 py-10 relative">
           <motion.h1
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -156,6 +157,135 @@ function App() {
           </motion.div>
         </div>
       </section>
+      {/*Features*/}
+      <section id="features" className="mx-auto max-w-6xl px-4 py-10">
+        <h2 className="text-3xl font-bold">Tudo o que você precisa</h2>
+        <p className="text-slate-300 mt-2 max-w-2x1">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum autem
+          ipsum exercitationem blanditiis amet, rem nemo earum maiores illo
+          fugiat sint nesciunt iusto repellendus placeat. Vel aliquam dolor
+          alias iste.
+        </p>
+        <div className="mt-8 grid grid-cols-1 md-grid-cols-2 lg:grid-cols-3 gap-4">
+          {[
+            {
+              title: "Design Responsivo",
+              desc: "Funciona em qualquer tela",
+              icon: <Sparkles className="size-5 text-fuchsia-400" />,
+            },
+            {
+              title: "Design Responsivo",
+              desc: "Funciona em qualquer tela",
+              icon: <Star className="size-5 text-amber-400" />,
+            },
+            {
+              title: "Design Responsivo",
+              desc: "Funciona em qualquer tela",
+              icon: <Zap className="size-5 text-emerald-400" />,
+            },
+            {
+              title: "Design Responsivo",
+              desc: "Funciona em qualquer tela",
+              icon: <Shield className="size-5 text-sky-400" />,
+            },
+            {
+              title: "Design Responsivo",
+              desc: "Funciona em qualquer tela",
+              icon: <Sparkles className="size-5 text-fuchsia-400" />,
+            },
+            {
+              title: "Design Responsivo",
+              desc: "Funciona em qualquer tela",
+              icon: <Star className="size-5 text-amber-400" />,
+            },
+          ].map((f) => (
+            <div
+              key={f.title}
+              className="rounded-2xl border border-white/10 bg-white/[0.02] p-6"
+            >
+              <div className="flex-items-center gap-3">
+                {f.icon}
+                <p className="font-semibold">{f.title}</p>
+              </div>
+              <p className="text-sm text-slate-400 mt-2">{f.desc}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+      {/* Depoimentos */}
+      <section id="testmonials" className="mx-auto max-w-6xl px-4 py-10">
+        <h2 className="text-3xl font-bold">Quem usou, aprovou!</h2>
+        <div className="mt-8 grid grid-cols-1 md:grid-cols-3 gap-4">
+          {[1, 2, 3].map((i) => (
+            <blockquote
+              key={i}
+              className="rounded-2xl border border-white/10 p-6"
+            >
+              <div className="flex items-center gap-2 text-amber-400">
+                {Array.from({ length: 5 }).map((_, i) => (
+                  <Star key={i} className="size-4 fill-current" />
+                ))}
+              </div>
+              <p className="mt-3 text-slate-300">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+              </p>
+              <footer className="mt-3 text-sm-text-slate-400">
+                - Nome do Cliente
+              </footer>
+            </blockquote>
+          ))}
+        </div>
+      </section>
+      {/* Pricing */}
+      <section id="pricing" className="mx-auto max-w-6xl px-4 py-10 mb-20">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-center">
+          <div>
+            <h2 className="text-3xl font-bold">Plano único, Sem Complicação</h2>
+            <p className="text-slate-300 mt-6 max-w-2x1">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum
+              autem ipsum exercitationem blanditiis amet, rem nemo earum maiores
+              illo.
+            </p>
+            <ul className="mt-4 space-y-2 text-sm text-slate-300">
+              <li className="flex items-center gap-4">
+                <Check className="size-4 text-emerald-400" />
+                Benefício 1
+              </li>
+              <li className="flex items-center gap-4">
+                <Check className="size-4 text-emerald-400" />
+                Benefício 2
+              </li>
+              <li className="flex items-center gap-4">
+                <Check className="size-4 text-emerald-400" />
+                Benefício 3
+              </li>
+            </ul>
+          </div>
+          <div className="rounded-3xl border border-white/10 bg-white/[0.02] p-8">
+            <div className="text-sm text-slate-400">A partir de</div>
+            <div className="text-5x1 font-extrabold mt-2">R$ 199,90</div>
+            <div className="text-sm text-slate-300 mt-4 flex gap-2">
+              <Clock className="size-5 text-amber-400" />
+              <p>Somente hoje!</p>
+            </div>
+            <button
+              href="#"
+              className="mt-6 cursor-pointer rounded-2xl bg-fuchsia-600 hover:bg-fuchsia-400 px-6 py-3 font-medium"
+            >
+              <a href="#">Comprar agora!</a>
+            </button>
+          </div>
+        </div>
+      </section>
+      {/* Footer */}
+      <footer className="border-t border-white/10 mt-20 py-6 flex flex-col items-center">
+        <div className="mx-auto max-w-6xl px-4 py-8">
+          <div className="mb-4">Minha Marca @ {new Date().getFullYear()}</div>
+          <a href="#" className="text-slate-300">
+            Política de Privacidade
+          </a>
+        </div>
+      </footer>
     </div>
   );
 }
