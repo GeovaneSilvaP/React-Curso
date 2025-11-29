@@ -7,6 +7,9 @@ import Contato from "./routes/Contato.jsx";
 import Home from "./routes/Home.jsx";
 import Erro from "./routes/Erro.jsx";
 
+//5 - contexto mais complexo
+import { TitleColorContextProvider } from "./context/TitleColorContext.jsx";
+
 //2- criar provide
 import { CounterContextProvider } from "./context/CounterContext.jsx";
 
@@ -33,7 +36,9 @@ const router = createBrowserRouter([
 createRoot(document.getElementById("root")).render(
   <StrictMode>
     <CounterContextProvider>
-      <RouterProvider router={router} />
+      <TitleColorContextProvider>
+        <RouterProvider router={router} />
+      </TitleColorContextProvider>
     </CounterContextProvider>
   </StrictMode>
 );
