@@ -12,9 +12,9 @@ Content-Type: application/json
 GET http://localhost:3000/api/services
 
 ###
-GET http://localhost:3000/api/services/692c21fa291d2dc5a1973f41
+GET http://localhost:3000/api/services/692c8322b475ea5409ab203a
 ###
-DELETE http://localhost:3000/api/services/692c21fa291d2dc5a1973f41
+DELETE http://localhost:3000/api/services/692c8322b475ea5409ab203a
 
 ###
 PUT http://localhost:3000/api/services/692c21fa291d2dc5a1973f41
@@ -57,7 +57,33 @@ Content-Type: application/json
 GET http://localhost:3000/api/parties
 
 ###
-GET http://localhost:3000/api/parties/692c2798dd09f370a91a719d
+GET http://localhost:3000/api/parties/692c8b95b475ea5409ab2066
 
 ###
-DELETE http://localhost:3000/api/parties/692c2798dd09f370a91a719d
+DELETE http://localhost:3000/api/parties/692c4c08b475ea5409ab2028
+
+###
+PUT http://localhost:3000/api/parties/692c8b95b475ea5409ab2066
+Content-Type: application/json
+
+{
+  "title": "Meu evento 2",
+  "author": "Geovane",
+  "description": "Uma festa de aniversário",
+  "budget": 10000,
+  "image": "https://images.unsplash.com/photo-1478146059778-26028b07395a?auto=format&fit=crop&w=892&q=80",
+  "services": [
+    {
+    "name": "Algum serviço 1",
+    "description": "Alguma descrição",
+    "price": 12000,
+    "image": "https://images.unsplash.com/photo-1478146059778-26028b07395a?auto=format&fit=crop&w=892&q=80"
+    },
+    {
+      "name": "Algum serviço 2",
+    "description": "Alguma descrição",
+    "price": 86600,
+    "image": "https://images.unsplash.com/photo-1478146059778-26028b07395a?auto=format&fit=crop&w=892&q=80"
+    }
+  ]
+}
