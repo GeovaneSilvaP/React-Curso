@@ -1,8 +1,12 @@
 const router = require("express").Router();
 
-//Services router
-const serviceRouter = require("./services");
+// Services Router
+const servicesRouter = require("./services");
+router.use("/", servicesRouter);
 
-router.use("/", serviceRouter);
+// partes routes
+const partyRouter = require("./parties");
+
+router.use("/", partyRouter);
 
 module.exports = router;

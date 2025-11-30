@@ -4,35 +4,18 @@ const { Schema } = mongoose;
 
 const { serviceSchema } = require("./Service");
 
-const parTySchema = new Schema(
+const partySchema = new Schema(
   {
-    title: {
-      type: String,
-      required: true,
-    },
-    author: {
-      type: String,
-      required: true,
-    },
-    description: {
-      type: String,
-      required: true,
-    },
-    budget: {
-      type: Number,
-      required: true,
-    },
-    image: {
-      type: String,
-      required: true,
-    },
-    services: {
-      type: [serviceSchema],
-    },
+    title: { type: String, required: true },
+    author: { type: String, required: true },
+    description: { type: String, required: true },
+    budget: { type: Number, required: true },
+    image: { type: String, required: true },
+    services: [serviceSchema],
   },
   { timestamps: true }
 );
 
-const Party = mongoose.model("Party", parTySchema);
+const Party = mongoose.model("Party", partySchema);
 
 module.exports = Party;

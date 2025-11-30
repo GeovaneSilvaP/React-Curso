@@ -5,12 +5,12 @@ async function main() {
     mongoose.set("strictQuery", true);
 
     await mongoose.connect(
-      "mongodb+srv://geovane:geovane03@cluster0.5kpmmny.mongodb.net/?appName=Cluster0"
+      "mongodb+srv://geovane:geovane03@cluster0.5kpmmny.mongodb.net/meuBanco"
     );
 
     console.log("Conectado ao banco!");
   } catch (error) {
-    console.log(`Erro: ${error}`);
+    console.log("Erro na conexão:", error);
   }
 }
 
