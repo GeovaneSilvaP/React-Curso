@@ -1,0 +1,168 @@
+/* ===== CONTAINER PRINCIPAL ===== */
+.form-page {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.form-page h2 {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+  color: #F1F5F6; /* título claro */
+}
+
+.form-page p {
+  opacity: 0.8;
+  margin-bottom: 2rem;
+  color: #AEB8BC; /* texto secundário */
+}
+
+/* ===== FORMULÁRIO ===== */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  background: #272E33; /* card dark */
+  padding: 2rem;
+  border-radius: 14px;
+  border: 1px solid #3A444A;
+  box-shadow: 0 5px 22px rgba(0, 0, 0, 0.3);
+}
+
+/* ===== LABEL / INPUT ===== */
+label {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.4rem;
+  width: 100%;
+  color: #E3E9EB;
+}
+
+label span {
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+input[type="text"],
+textarea {
+  width: 100%;
+  padding: 0.8rem 1rem;
+  background: #1E2428;
+  border: 2px solid #3A444A;
+  border-radius: 10px;
+  font-size: 1rem;
+  color: #E3E9EB;
+  transition: 0.2s ease;
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: #6C767A;
+}
+
+input[type="text"]:focus,
+textarea:focus {
+  border-color: #7BA8A1;
+  box-shadow: 0 0 10px rgba(123, 168, 161, 0.25);
+}
+
+/* ===== TÍTULO DOS SERVIÇOS ===== */
+.services-container h2 {
+  margin-top: 2rem;
+  color: #F1F5F6;
+}
+
+.services-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 1.5rem;
+  margin-top: 1rem;
+}
+
+/* ===== CARD DE SERVIÇO ===== */
+.service {
+  background: #2C3439;
+  border-radius: 12px;
+  padding: 1rem;
+  border: 1px solid #3A444A;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25);
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+  transition: 0.15s ease;
+}
+
+.service:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.35);
+  cursor: pointer;
+}
+
+/* ===== IMAGEM DO SERVIÇO ===== */
+.service img {
+  width: 100%;
+  height: 130px;
+  object-fit: cover;
+  border-radius: 10px;
+  filter: brightness(0.9);
+  transition: 0.2s;
+}
+
+.service:hover img {
+  filter: brightness(1);
+}
+
+/* ===== NOME E PREÇO ===== */
+.service-name {
+  font-size: 1.05rem;
+  font-weight: bold;
+  color: #E3E9EB;
+}
+
+.service-price {
+  color: #7BA8A1; /* destaque suave */
+  font-weight: 600;
+}
+
+/* ===== CHECKBOX ===== */
+.checkbox-container {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin-top: 0.4rem;
+}
+
+.checkbox-container p {
+  margin: 0;
+  font-size: 0.9rem;
+  opacity: 0.8;
+  color: #AEB8BC;
+}
+
+input[type="checkbox"] {
+  accent-color: #7BA8A1;
+  width: 18px;
+  height: 18px;
+}
+
+/* ===== BOTÃO CRIAR FESTA ===== */
+.btn {
+  width: 180px;
+  margin: 1.5rem auto 0;
+  background: #7BA8A1;
+  color: #0F1416;
+  padding: 0.8rem 1.2rem;
+  border: none;
+  border-radius: 10px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  transition: 0.2s;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background: #68938D;
+  transform: scale(1.03);
+}

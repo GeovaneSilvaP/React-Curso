@@ -9,6 +9,11 @@
     margin-bottom: 50px;
 }
 
+.home h3{
+  color: black;
+  margin-top: 15px;
+}
+
 /* ===== LISTA DE FESTAS ===== */
 .partis-container {
   display: grid;
@@ -54,7 +59,7 @@
   padding: 0.6rem 1rem;
   text-align: center;
   border-radius: 8px;
-  background: #4f46e5; /* Azul roxo elegante */
+  background: #436964; /* Azul roxo elegante */
   color: #fff;
   font-weight: 600;
   transition: background 0.2s ease, transform 0.1s ease;

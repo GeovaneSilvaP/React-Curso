@@ -1,26 +1,55 @@
-*{
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-    font-family: "Lato";
+/* Reset + Fonte padrão */
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Lato", sans-serif;
 }
 
-body{
-    background-color: #f5f6fa;
+/* Fundo bem suave */
+body {
+  background:  #1E2428; /* Cinza pastel */
+  color: #E3E9EB;
+  min-height: 100vh;
 }
 
-ul{
-    list-style: none;
-    display: flex;
-    gap: 1rem;
+/* Container */
+.container {
+  width: 100%;
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 2rem;
 }
 
-a{
-    color: #283252;
-    text-decoration: none;
-    font-weight: bold;
+/* Textos */
+p {
+  color: #ffffff;
+  line-height: 1.6;
+  font-size: 1rem;
 }
 
-p{
-    color: #747990;
+h1, h2, h3 {
+  color: #F1F5F6;
+  font-weight: 700;
+  margin-bottom: 0.8rem;
 }
+
+/* Links */
+a {
+  color: #C9D6D9;
+  text-decoration: none;
+  font-weight: bold;
+  transition: 0.3s ease;
+}
+
+a:hover {
+  color: #ffffff; /* Verde acinzentado suave */
+}
+
+/* Reset UL */
+ul {
+  list-style: none;
+  display: flex;
+  gap: 1.2rem;
+}
+
