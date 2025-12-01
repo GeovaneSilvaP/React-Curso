@@ -1,74 +1,146 @@
-import partyFetch from '../axios/config'
+import partyFetch from "../axios/config";
 
 import { useState, useEffect } from "react";
 
 import { useNavigate } from "react-router-dom";
 
-import "./Form.css"
+import "./Form.css";
 
 const CreateParty = () => {
-  const [services, setServices] = useState([])
+  const [services, setServices] = useState([]);
+
+  const [title, setTitle] = useState("");
+  const [author, setAuthor] = useState("");
+  const [description, setDescription] = useState("");
+  const [budget, setBudget] = useState(0);
+  const [image, setImage] = useState("");
+  const [partyServices, setPartyServices] = useState([]);
 
   //load services
-  useEffect(()=>{
+  useEffect(() => {
     async function loadServices() {
-      const res = await partyFetch.get("/services")
+      const res = await partyFetch.get("/services");
 
       console.log(res.data);
-      
 
-      setServices(res.data)
+      setServices(res.data);
     }
 
-    loadServices()
-  },[])
+    loadServices();
+  }, []);
+
+  //Add or remove services
+  function handleServices(e) {
+    const checked = e.target.checked;
+    const value = e.target.value;
+
+    const filteredService = services.filter((s) => s._id === value);
+
+    if (checked) {
+      setPartyServices((services) => [...services, filteredService[0]]);
+    } else {
+      setPartyServices((services) => services.filter((s) => s._id !== value));
+    }
+
+    console.log(partyServices);
+  }
+
+  //creatyParty
+  function creatyParty(e) {
+    e.preventDefault();
+
+    const party = {
+      title,
+      author,
+      description,
+      budget,
+      image,
+      services: partyServices,
+    };
+
+    console.log(party);
+  }
 
   return (
-    <div className='form-page'>
-      <h2 className='form-meuh2'>Crie sua próxima Festa</h2>
+    <div className="form-page">
+      <h2 className="form-meuh2">Crie sua próxima Festa</h2>
       <p>Defina o seu orçamento e escolha os serviços</p>
-      <form>
+      <form onSubmit={(e) => creatyParty(e)}>
         <label>
           <span>Nome da festa:</span>
-          <input type="text" placeholder='Seja Criativo...' required/>
+          <input
+            type="text"
+            placeholder="Seja Criativo..."
+            required
+            value={title}
+            onChange={(e) => setTitle(e.target.value)}
+          />
         </label>
         <label>
           <span>Anfitrião:</span>
-          <input type="text" placeholder='Quem está dando a festa...' required/>
+          <input
+            type="text"
+            placeholder="Quem está dando a festa..."
+            required
+            value={author}
+            onChange={(e) => setAuthor(e.target.value)}
+          />
         </label>
         <label>
           <span>Descrição:</span>
-          <textarea placeholder='Conte mais sobre a festa...' required></textarea>
+          <textarea
+            placeholder="Conte mais sobre a festa..."
+            required
+            value={description}
+            onChange={(e) => setDescription(e.target.value)}
+          ></textarea>
         </label>
         <label>
           <span>Orçamento:</span>
-          <input type="text" placeholder='Quanto você pretende investir ?' required/>
+          <input
+            type="text"
+            placeholder="Quanto você pretende investir ?"
+            required
+            value={budget}
+            onChange={(e) => setBudget(e.target.value)}
+          />
         </label>
         <label>
           <span>Imagem:</span>
-          <input type="text" placeholder='Insira a URL de uma imagem' required/>
+          <input
+            type="text"
+            placeholder="Insira a URL de uma imagem"
+            required
+            value={image}
+            onChange={(e) => setImage(e.target.value)}
+          />
         </label>
         <div>
           <h2>Escolha os serviços</h2>
-          <div className='services-container'>
+          <div className="services-container">
             {services.length === 0 && <p>Carregando...</p>}
-            {services.length > 0 && services.map((service)=>(
-              <div className='service' key={service._id}>
-                <img src={service.image} alt={service.name} />
-                <p className='service-name'>{service.name}</p>
-                <p className='service-price'>R${service.price}</p>
-                <div className='checkbox-container'>
-                  <input type="checkbox" value={service._id}/>
-                  <p>Marque para solicitar</p>
+            {services.length > 0 &&
+              services.map((service) => (
+                <div className="service" key={service._id}>
+                  <img src={service.image} alt={service.name} />
+                  <p className="service-name">{service.name}</p>
+                  <p className="service-price">R${service.price}</p>
+                  <div className="checkbox-container">
+                    <input
+                      type="checkbox"
+                      value={service._id}
+                      onChange={(e) => handleServices(e)}
+                    />
+                    <p>Marque para solicitar</p>
+                  </div>
                 </div>
-              </div>
-            ))}
+              ))}
           </div>
         </div>
-        <input type="submit" value="Criar festa" className='btn'/>
+        <input type="submit" value="Criar festa" className="btn" />
       </form>
     </div>
-  )
-}
+  );
+};
 
-export default CreateParty
+export default CreateParty;
