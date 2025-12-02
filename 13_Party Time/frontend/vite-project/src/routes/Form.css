@@ -1,4 +1,6 @@
-/* ===== CONTAINER PRINCIPAL ===== */
+/* ===========================
+   FORM PAGE
+=========================== */
 .form-page {
   max-width: 900px;
   margin: 0 auto;
@@ -9,34 +11,31 @@
 .form-page h2 {
   font-size: 2rem;
   margin-bottom: 0.5rem;
-  color: #F1F5F6; /* título claro */
+  color: #F1F5F6;
 }
 
 .form-page p {
   opacity: 0.8;
   margin-bottom: 2rem;
-  color: #AEB8BC; /* texto secundário */
+  color: #AEB8BC;
 }
 
-/* ===== FORMULÁRIO ===== */
+/* FORM */
 form {
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
-  background: #272E33; /* card dark */
+  background: #272E33;
   padding: 2rem;
   border-radius: 14px;
   border: 1px solid #3A444A;
   box-shadow: 0 5px 22px rgba(0, 0, 0, 0.3);
 }
 
-/* ===== LABEL / INPUT ===== */
 label {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
   gap: 0.4rem;
-  width: 100%;
   color: #E3E9EB;
 }
 
@@ -62,18 +61,15 @@ textarea::placeholder {
   color: #6C767A;
 }
 
-input[type="text"]:focus,
+input:focus,
 textarea:focus {
   border-color: #7BA8A1;
   box-shadow: 0 0 10px rgba(123, 168, 161, 0.25);
 }
 
-/* ===== TÍTULO DOS SERVIÇOS ===== */
-.services-container h2 {
-  margin-top: 2rem;
-  color: #F1F5F6;
-}
-
+/* ===========================
+   SERVICES (form + página party)
+=========================== */
 .services-container {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
@@ -81,7 +77,6 @@ textarea:focus {
   margin-top: 1rem;
 }
 
-/* ===== CARD DE SERVIÇO ===== */
 .service {
   background: #2C3439;
   border-radius: 12px;
@@ -90,17 +85,16 @@ textarea:focus {
   box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25);
   display: flex;
   flex-direction: column;
-  gap: 0.7rem;
+  gap: 0.5rem;
   transition: 0.15s ease;
+  text-align: center;
 }
 
 .service:hover {
   transform: translateY(-4px);
   box-shadow: 0 6px 18px rgba(0, 0, 0, 0.35);
-  cursor: pointer;
 }
 
-/* ===== IMAGEM DO SERVIÇO ===== */
 .service img {
   width: 100%;
   height: 130px;
@@ -114,7 +108,6 @@ textarea:focus {
   filter: brightness(1);
 }
 
-/* ===== NOME E PREÇO ===== */
 .service-name {
   font-size: 1.05rem;
   font-weight: bold;
@@ -122,22 +115,20 @@ textarea:focus {
 }
 
 .service-price {
-  color: #7BA8A1; /* destaque suave */
+  color: #7BA8A1;
   font-weight: 600;
 }
 
-/* ===== CHECKBOX ===== */
+/* CHECKBOX */
 .checkbox-container {
   display: flex;
   align-items: center;
   gap: 0.4rem;
-  margin-top: 0.4rem;
 }
 
 .checkbox-container p {
   margin: 0;
   font-size: 0.9rem;
-  opacity: 0.8;
   color: #AEB8BC;
 }
 
@@ -147,7 +138,7 @@ input[type="checkbox"] {
   height: 18px;
 }
 
-/* ===== BOTÃO CRIAR FESTA ===== */
+/* BOTÃO GERAL */
 .btn {
   width: 180px;
   margin: 1.5rem auto 0;

@@ -1,4 +1,6 @@
-/* Reset + Fonte padrão */
+/* ===========================
+   RESET & BASE
+=========================== */
 * {
   padding: 0;
   margin: 0;
@@ -6,35 +8,12 @@
   font-family: "Lato", sans-serif;
 }
 
-/* Fundo bem suave */
 body {
-  background:  #1E2428; /* Cinza pastel */
+  background: #1E2428;
   color: #E3E9EB;
   min-height: 100vh;
 }
 
-/* Container */
-.container {
-  width: 100%;
-  max-width: 1080px;
-  margin: 0 auto;
-  padding: 2rem;
-}
-
-/* Textos */
-p {
-  color: #ffffff;
-  line-height: 1.6;
-  font-size: 1rem;
-}
-
-h1, h2, h3 {
-  color: #F1F5F6;
-  font-weight: 700;
-  margin-bottom: 0.8rem;
-}
-
-/* Links */
 a {
   color: #C9D6D9;
   text-decoration: none;
@@ -43,13 +22,9 @@ a {
 }
 
 a:hover {
-  color: #ffffff; /* Verde acinzentado suave */
+  color: #ffffff;
 }
 
-/* Reset UL */
 ul {
   list-style: none;
-  display: flex;
-  gap: 1.2rem;
 }
-

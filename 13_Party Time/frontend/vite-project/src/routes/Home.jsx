@@ -28,10 +28,10 @@ const Home = () => {
       <div className="partis-container">
         {parties.length === 0 && <p>Não há festas cadrastradas.</p>}
         {parties.map((party) => (
-          <div className="party" key={party._id}>
+          <div className="party-card" key={party._id}>
             <img src={party.image} alt={party.title} />
             <h3>{party.title}</h3>
-            <Link to={`/party/${party._id}`} className="btn-secondary">
+            <Link to={`/party/${party._id}`} className="btn-secondary-1">
               Detalhes
             </Link>
           </div>
