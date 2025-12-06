@@ -8,9 +8,11 @@ const {
   getMemory,
   deleteMemory,
   updateMemory,
-  toggleFavorite
+  toggleFavorite,
+  addComment
 } = require("./controllers/MemoryController");
 
+// CREATE
 router.post(
   "/",
   upload.single("image"),
@@ -27,7 +29,12 @@ router.post(
   createMemory
 );
 
-// GET all
+// ⚠ ROTAS ESPECÍFICAS DEVEM VIR PRIMEIRO
+router.patch("/favorite/:id", toggleFavorite);
+
+router.patch("/comment/:id", addComment);
+
+// GET ALL
 router.get("/", getMemories);
 
 // GET by ID
@@ -38,7 +45,5 @@ router.delete("/:id", deleteMemory);
 
 // UPDATE
 router.patch("/:id", upload.single("image"), updateMemory);
-
-router.patch("/favorite/:id", (req, res)=> toggleFavorite(req, res))
 
 module.exports = router;

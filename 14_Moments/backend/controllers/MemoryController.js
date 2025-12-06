@@ -97,7 +97,6 @@ const updateMemory = async (req, res) => {
 
     let src = null;
 
-    // se veio imagem nova
     if (req.file) {
       src = `images/${req.file.filename}`;
     }
@@ -108,7 +107,6 @@ const updateMemory = async (req, res) => {
       return res.status(404).json({ msg: "Memória não encontrada!" });
     }
 
-    // excluir imagem antiga caso tenha vindo uma nova
     if (src) {
       removeOldImage(memory);
     }
@@ -135,24 +133,61 @@ const updateMemory = async (req, res) => {
   }
 };
 
-const toggleFavorite = async(req, res) =>{
-   try {
+// FAVORITAR / DESFAVORITAR
+const toggleFavorite = async (req, res) => {
+  try {
     const memory = await Memory.findById(req.params.id);
 
     if (!memory) {
       return res.status(404).json({ msg: "Memória não encontrada!" });
     }
 
-    memory.favorite = !memory.favorite
+    memory.favorite = !memory.favorite;
+    await memory.save();
 
-    memory.save()
-
-    return res.json({ msg: "Adicionada aos favoritos", memory });
+    return res.json({
+      msg: memory.favorite
+        ? "Adicionada aos favoritos"
+        : "Removida dos favoritos",
+      memory,
+    });
   } catch (error) {
     console.error(error);
     return res.status(500).json({ msg: "Erro no servidor." });
   }
-}
+};
+
+// ADICIONAR COMENTÁRIO
+const addComment = async (req, res) => {
+  try {
+    const { name, text } = req.body;
+
+    if (!name || !text) {
+      return res.status(400).json({
+        msg: "Por favor, preencha todos os campos.",
+      });
+    }
+
+    const memory = await Memory.findById(req.params.id);
+
+    if (!memory) {
+      return res.status(404).json({ msg: "Memória não encontrada!" });
+    }
+
+    const comment = { name, text };
+
+    memory.comments.push(comment);
+    await memory.save();
+
+    return res.json({
+      msg: "Comentário adicionado com sucesso!",
+      memory,
+    });
+  } catch (error) {
+    console.error(error);
+    return res.status(500).json({ msg: "Erro no servidor." });
+  }
+};
 
 module.exports = {
   createMemory,
@@ -161,4 +196,5 @@ module.exports = {
   deleteMemory,
   updateMemory,
   toggleFavorite,
+  addComment,
 };
