@@ -4,6 +4,9 @@ import ParentComponent from "./components/ParentComponent";
 import Posts from "./components/PostItem";
 import {ThemaProvider} from "./context/ThemeContext";
 import BotaoDeTheme from './components/BotaoDeTheme';
+import FormStatus from "./components/FormStatus";
+import EstadoDoFormulario from './components/EstadoDoFormulario';
+import MessagemApp from './components/MessagemApp';
 
 function App() {
 
@@ -30,6 +33,18 @@ function App() {
     <ThemaProvider>
       <BotaoDeTheme />
     </ThemaProvider>
+
+    {/*Hook useFormStatus */}
+    <h1>5- Hook useFormStatus</h1>
+    <FormStatus />
+
+    {/*Hook useFormState */}
+    <h1>6- Hook useFormState</h1>
+    <EstadoDoFormulario />
+
+    {/*Hook useOptimistic */}
+    <h1>7- Hook useOptimistic</h1>
+    <MessagemApp />
     </>
   )
 }
